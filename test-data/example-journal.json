@@ -4,7 +4,7 @@
             // an example unbooked test slot
             "slot": {
                 "_slotId":1000,
-    	          "start":"2012-10-05T09:00:00+01:00",
+    	          "start":"2018-03-05T09:00:00+01:00",
     	          "duration":57,
     	          "vehicleSlotType":"B57mins",
                 "_testCentreId":54321,
@@ -15,7 +15,7 @@
             // an example booked test slot (with all of the optional data populated)
             "slot": {
                 "_slotId":1001,
-    	          "start":"2012-10-05T10:15:00+01:00",
+    	          "start":"2018-03-05T10:15:00+01:00",
     	          "duration":57,
     	          "vehicleSlotType":"B57mins",
                 "_testCentreId":54321,
@@ -84,7 +84,7 @@
             // an example booked test slot (with the optional data unpopulated)
             "slot": {
 	            "_slotId":1002,
-	            "start":"2012-10-05T11:15:00+01:00",
+	            "start":"2018-03-05T11:15:00+01:00",
 	            "duration":30,
               "_testCentreId":54321,
               "testCentreName":"Example Test Centre"
@@ -108,7 +108,7 @@
             // an example trainer booking (no candidate)
             "slot": {
                 "_slotId":1003,
-                "start":"2012-10-05T11:45:00+01:00",
+                "start":"2018-03-05T11:45:00+01:00",
                 "duration":90,
                 "vehicleSlotType":"Voc90mins",
                 "_testCentreId":54321,
@@ -132,9 +132,9 @@
         {
             // an example short-term commitment (date and time)
             "_commitmentId":123400,
-            "startDate":"2012-10-08",
+            "startDate":"2018-03-08",
             "startTime":"10:00:00+01:00",
-            "endDate":"2012-10-08",
+            "endDate":"2018-03-08",
             "endTime":"11:00:00+01:00",
             "_activityCode":104,
             "activityDescription":"Medical appointment"
@@ -142,8 +142,8 @@
         {
             // an example long-term commitment (all day between the specified dates)
             "_commitmentId":123401,
-            "startDate":"2012-10-15",
-            "endDate":"2012-10-19",
+            "startDate":"2018-03-15",
+            "endDate":"2018-03-19",
             "_activityCode":81,
             "activityDescription":"Annual Leave"
         }
@@ -153,7 +153,7 @@
         {
             //  example non test activity (that clashes with a test above)
             "_slotId":1001,
-	          "start":"2012-10-05T10:15:00+01:00",
+	          "start":"2018-03-05T10:15:00+01:00",
 	          "duration":57,
             "_testCentreId":54321,
             "testCentreName":"Example Test Centre",
@@ -163,7 +163,7 @@
         {
             //  another example non test activity (that clashes with a personal commitment above)
             "_slotId":1100,
-	          "start":"2012-10-15T10:15:00+01:00",
+	          "start":"2018-03-15T10:15:00+01:00",
 	          "duration":57,
             "_testCentreId":65432,
             "testCentreName":"Example Test Centre 2",
@@ -173,7 +173,7 @@
         {
             //  example non test activity (that doesn't clash)
             "_slotId":1200,
-	          "start":"2012-10-22T10:15:00+01:00",
+	          "start":"2018-03-22T10:15:00+01:00",
 	          "duration":57,
             "_testCentreId":54321,
             "testCentreName":"Example Test Centre",
@@ -186,7 +186,7 @@
         {
             //  example test slot
             "_slotId":1300,
-            "start":"2012-10-23T09:00:00+01:00",
+            "start":"2018-03-23T09:00:00+01:00",
             "duration":90,
             "_testCentreId":76543,
             "testCentreName":"Example Test Centre 3",
@@ -195,7 +195,7 @@
         {
             //  example test slot
             "_slotId":1301,
-            "start":"2012-10-23T10:45:00+01:00",
+            "start":"2018-03-23T10:45:00+01:00",
             "duration":90,
             "_testCentreId":76543,
             "testCentreName":"Example Test Centre 3",
@@ -204,7 +204,7 @@
         {
             //  example test slot
             "_slotId":1302,
-            "start":"2012-10-23T12:30:00+01:00",
+            "start":"2018-03-23T12:30:00+01:00",
             "duration":90,
             "testCentreId":76543,
             "testCentreName":"Example Test Centre 3",
@@ -218,7 +218,7 @@
             "_deploymentId":11111,
             "_testCentreId":76543,
             "testCentreName":"Example Test Centre 3",
-            "date":"2012-10-23"
+            "date":"2018-03-23"
         },
         {
             // example multi-day deployment (note the gap for the weekend)
@@ -226,12 +226,12 @@
             "_testCentreId":87654,
             "testCentreName":"Example Test Centre 4",
             "dates": [
-                "2012-10-24",
-                "2012-10-25",
-                "2012-10-26",
+                "2018-03-24",
+                "2018-03-25",
+                "2018-03-26",
                 // gap for weekend
-                "2012-10-29",
-                "2012-10-30"
+                "2018-03-29",
+                "2018-03-30"
             ]
         }
     ]
