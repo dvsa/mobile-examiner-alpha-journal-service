@@ -5,5 +5,5 @@ const journal = new Journal(redis);
 
 export default (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false
-    journal.get(event.queryStringParameters.email, callback);
+    journal.set(event.email, event.data, callback);
 };

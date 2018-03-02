@@ -14,7 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-package": "./node_modules/.bin/copyfiles package.json build",
-    "compile": "./node_modules/.bin/babel src -d build"
+    "compile": "rm -rf build && ./node_modules/.bin/babel src -d build"
   },
   "repository": {
     "type": "git",
