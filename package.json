@@ -1,0 +1,29 @@
+{
+  "name": "mobile-examiner-alpha-journal-service",
+  "version": "1.0.0",
+  "description": "DVSA Mobile Examiner Services (GDS Alpha phase) - Journal Microservice",
+  "dependencies": {
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "copyfiles": "^1.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-package": "./node_modules/.bin/copyfiles package.json build",
+    "compile": "./node_modules/.bin/babel src -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvsa/mobile-examiner-alpha-journal-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dvsa/mobile-examiner-alpha-journal-service/issues"
+  },
+  "homepage": "https://github.com/dvsa/mobile-examiner-alpha-journal-service#readme"
+}
