@@ -16,12 +16,10 @@ export default class Journal {
         client.set(email, escapedString, onSet);
 
         function onSet(err, data) {
-            console.log('setting data')
             let message;
             let response;
 
             if (err) {
-                console.log('error', err);
                 message = 'Error'
                 response = createResponse({
                         body: {
@@ -48,16 +46,14 @@ export default class Journal {
 
     get(email, callback) {
         const client = this.redisClient;
-        
+
         client.get(email, onGet);
 
         function onGet(err, resp) {
-            console.log('getting data')
             let message;
             let response;
 
             if (err) {
-                console.log('error', err);
                 message = 'Error'
                 response = createResponse({
                         body: {
