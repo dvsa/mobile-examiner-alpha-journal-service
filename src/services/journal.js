@@ -6,6 +6,26 @@ export default class Journal {
             url: process.env.redisUrl,
             port: process.env.redisPort
           });
+
+        this.redisClient.on('ready', function () {
+            console.log('Redis client: ready');
+        });
+        this.redisClient.on('connect', function () {
+            console.log('Redis client: connect');
+        });
+        this.redisClient.on('reconnecting', function () {
+            console.log('Redis client: reconnecting');
+        });
+        this.redisClient.on('error', function (err) {
+            console.log({err: err}, 'Listener.redis.client error: %s', err);
+            process.exit(1);
+        });
+        this.redisClient.on('end', function () {
+            console.log('Redis client: end');
+        });
+        this.redisClient.on('warning', function () {
+            console.log('Redis client: warning');
+        });
     }
 
     set(email, data, callback) {
@@ -28,7 +48,6 @@ export default class Journal {
                         },
                         statusCode: 500,
                 })
-                client.quit();
                 callback(response);
             }
 
@@ -39,7 +58,6 @@ export default class Journal {
                     data,
                 }
             })
-            client.quit();
             callback(null, response);
         }
     }
@@ -62,7 +80,6 @@ export default class Journal {
                         },
                         statusCode: 500,
                 })
-                client.quit();
                 callback(response);
             }
 
@@ -74,7 +91,6 @@ export default class Journal {
                     data,
                 }
             })
-            client.quit();
             callback(null, response);
         }
     }
