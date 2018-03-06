@@ -1,5 +1,5 @@
-import get from './functions/get';
-import set from './functions/set';
+import { get } from './functions/get';
+import { set } from './functions/set';
 
 const handler = {
     get,
