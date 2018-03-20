@@ -1,0 +1,24 @@
+swagger: "2.0"
+info:
+  title: Mobile Examiners Journal Service
+  version: "1.0"
+paths:
+  /getJournal:
+    get:
+      summary: Get journals
+      description: Returns the journals for a supplied email address
+      parameters:
+        - name: email
+          in: query
+          description: Email for which journals should be returned
+          required: true
+          type: string
+      responses:
+        "200":
+          description: The journals for the supplied email address
+          schema:
+            type: object
+        "500":
+          description: An error message
+          schema:
+            type: object
