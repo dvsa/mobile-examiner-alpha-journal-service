@@ -14,5 +14,8 @@ These steps will create a deployment-package.zip file for deploying to AWS lambd
 # Service requirements
  - Lambda functions must be with the same VPC as the Redis instance
 
- # Swagger
+# Swagger
 Go to editor.swagger.io and paste in the contents of `./src/function/swagger/journal-service.yml
+
+# Distribution builds
+Refer to the scripts inside dist-scripts for each of the distribution build steps
