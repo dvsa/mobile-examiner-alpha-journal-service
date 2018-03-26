@@ -1,4 +1,4 @@
-import * as redis from "redis";
+import * as redis from 'redis';
 
 export class JournalRepository {
   private redisClient: redis.RedisClient;
@@ -6,24 +6,24 @@ export class JournalRepository {
   constructor() {
     this.redisClient = redis.createClient(process.env.redisUrl);
 
-    this.redisClient.on("ready", () => {
-      console.log("Redis client: ready");
+    this.redisClient.on('ready', () => {
+      console.log('Redis client: ready');
     });
-    this.redisClient.on("connect", () => {
-      console.log("Redis client: connect");
+    this.redisClient.on('connect', () => {
+      console.log('Redis client: connect');
     });
-    this.redisClient.on("reconnecting", () => {
-      console.log("Redis client: reconnecting");
+    this.redisClient.on('reconnecting', () => {
+      console.log('Redis client: reconnecting');
     });
-    this.redisClient.on("error", (err: Error) => {
-      console.log({ err }, "Listener.redis.client error: %s", err);
+    this.redisClient.on('error', (err: Error) => {
+      console.log({ err }, 'Listener.redis.client error: %s', err);
       process.exit(1);
     });
-    this.redisClient.on("end", () => {
-      console.log("Redis client: end");
+    this.redisClient.on('end', () => {
+      console.log('Redis client: end');
     });
-    this.redisClient.on("warning", warn => {
-      console.log("Redis client: warning", warn);
+    this.redisClient.on('warning', (warn) => {
+      console.log('Redis client: warning', warn);
     });
   }
 
