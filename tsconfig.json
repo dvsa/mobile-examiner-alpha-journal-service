@@ -4,19 +4,14 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ],
-    "types" : [ "node" ],
-    "module": "es2015",
+    "lib": ["dom", "es2015"],
+    "types": ["node"],
+    // "module": "es2015",
     "sourceMap": true,
     "target": "es5",
     "outDir": "./build"
   },
-  "include": [
-    "src/**/*.ts"
-  ],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "node_modules",
     "src/**/*.spec.ts",
