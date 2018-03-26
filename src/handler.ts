@@ -1,9 +1,9 @@
-import { getJournal } from './function/getJournal';
-import { setJournal } from './function/setJournal';
+import { getJournal } from "./function/getJournal";
+import { setJournal } from "./function/setJournal";
 
-const handler = {
+module.exports.default = {
   getJournal,
   setJournal
 };
 
-export default handler;
+//export default handler;
