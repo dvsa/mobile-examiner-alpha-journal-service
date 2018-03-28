@@ -4,6 +4,7 @@ import createResponse from '../util/createResponse';
 import journal from '../service/journal';
 
 export function getJournal(event: any, context: Context, callback: Callback) {
+  context.callbackWaitsForEmptyEventLoop = false;
 
   const journalService = new journal();
   
@@ -14,7 +15,8 @@ export function getJournal(event: any, context: Context, callback: Callback) {
       response = createResponse({ message }, 500);
       callback(err, response);
     } else {
-      response = createResponse({ reply }, 200);
+      const { data: testSlots } = JSON.parse(JSON.parse(reply));
+      response = createResponse({ data: testSlots }, 200);
       callback(null, response);
     }
   });

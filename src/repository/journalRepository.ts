@@ -30,7 +30,7 @@ export class JournalRepository {
   set(key: string, value: string, callback: (err, res) => void) {
     const escapedString = JSON.stringify(value);
 
-    this.redisClient.set(key, escapedString, callback);
+    this.redisClient.set(key, value, callback);
   }
 
   get(key: string, callback: (err, reply) => void) {
