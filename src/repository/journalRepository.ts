@@ -1,13 +1,11 @@
 import * as redis from 'redis';
 
 export class JournalRepository {
-  
   private redisClient: redis.RedisClient;
-  
+
   constructor() {
-    
     this.redisClient = redis.createClient(process.env.redisUrl);
-      
+
     this.redisClient.on('ready', () => {
       console.log('Redis client: ready');
     });
@@ -24,17 +22,17 @@ export class JournalRepository {
     this.redisClient.on('end', () => {
       console.log('Redis client: end');
     });
-    this.redisClient.on('warning', () => {
-      console.log('Redis client: warning');
+    this.redisClient.on('warning', (warn) => {
+      console.log('Redis client: warning', warn);
     });
   }
-    
+
   set(key: string, value: string, callback: (err, res) => void) {
     const escapedString = JSON.stringify(value);
-      
+
     this.redisClient.set(key, escapedString, callback);
   }
-  
+
   get(key: string, callback: (err, reply) => void) {
     this.redisClient.get(key, callback);
   }

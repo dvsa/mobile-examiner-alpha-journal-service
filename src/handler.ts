@@ -6,4 +6,5 @@ const handler = {
   setJournal
 };
 
-export default handler;
+exports.default = handler;
+module.exports = exports['default'];
