@@ -10,7 +10,6 @@ ehthumbs.db
 # Ignore from project
 node_modules
 build
-dist
 npm-debug.log
 .vscode
 *.tar
