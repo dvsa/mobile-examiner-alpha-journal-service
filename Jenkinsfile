@@ -15,7 +15,6 @@ Map<String,String> tf_actions = [:]
 String tf_log_level = ""
 String uservice_name = "journal"
 String branch_name   = "${env.BRANCH_NAME}"
-String build_udl     = "${env.BUILD_URL}"
 String tf_component = Globals.USERVICE_MAPPING[uservice_name]
 
 
