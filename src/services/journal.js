@@ -2,10 +2,7 @@ import createResponse from '../utils/createResponse';
 export default class Journal {
 
     constructor(createRedisClient) {
-        this.redisClient = createRedisClient({
-            url: process.env.redisUrl,
-            port: process.env.redisPort
-          });
+        this.redisClient = createRedisClient(process.env.redisUrl);
 
         this.redisClient.on('ready', function () {
             console.log('Redis client: ready');
