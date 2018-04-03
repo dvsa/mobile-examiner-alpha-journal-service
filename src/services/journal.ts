@@ -1,7 +1,10 @@
 import createResponse from '../utils/createResponse';
 export default class Journal {
+    
+    redisClient : any;
 
     constructor(createRedisClient) {
+
         this.redisClient = createRedisClient(process.env.redisUrl);
 
         this.redisClient.on('ready', function () {

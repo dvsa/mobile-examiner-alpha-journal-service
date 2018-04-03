@@ -6,4 +6,4 @@ const handler = {
     set
 };
 
-export default handler;
+module.exports = handler;
