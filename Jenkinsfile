@@ -21,6 +21,8 @@ String tf_component = Globals.USERVICE_MAPPING[uservice_name]
 node (Globals.NONPROD_BUILDER_TAG) {
   currentBuild.description = "BRANCH: ${branch_name}"
 
+  sh "env"
+
   stage ('pre build') {
     GitFunctions.git_check_out(Globals.GITHUB_USERVICE_REPOS[uservice_name], branch_name, uservice_name, Globals.GITHUB_CREDS[uservice_name], true)
     NVMFunctions.ensure_nvm_installed()
