@@ -61,4 +61,13 @@ node (Globals.NONPROD_BUILDER_TAG) {
       }
     }
   }
+  stage('smoke-test') {
+    if(branch_name == "develop" || branch_name == "origin/develop"){
+      dir(uservice_name) {
+        withEnv(["JOURNAL_API_URL="+Globals.JOURNAL_API_URL]){
+          NVMFunctions.run("./dist-scripts/smoke-test.sh")
+        }
+      }
+    }
+  }
 }
