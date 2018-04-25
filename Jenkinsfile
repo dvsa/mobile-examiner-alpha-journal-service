@@ -57,7 +57,7 @@ node (Globals.NONPROD_BUILDER_TAG) {
       sha256sum = AWSFunctions.get_s3_object_sha256(Globals.NONPROD_S3_BUCKET_ID, uservice_name + ".zip")
       tf_extra_args = " -var '${uservice_name}_code_base64sha256sum=${sha256sum}' -target module.${uservice_name}_uservice.aws_lambda_function.general_lambda_function"
       dir("terraform") {
-        TFFunctions.terraform_run(Globals.PROJECT_NAME, "nonprod", tf_component, tf_actions['apply'], Globals.TF_BUCKET_PREFIX, Globals.AWS_DEFAULT_REGION, tf_log_level, tf_extra_args)
+        TFFunctions.terraform_run(Globals.PROJECT_NAME, "develop", tf_component, tf_actions['apply'], Globals.TF_BUCKET_PREFIX, Globals.AWS_DEFAULT_REGION, tf_log_level, tf_extra_args)
       }
     }
   }
