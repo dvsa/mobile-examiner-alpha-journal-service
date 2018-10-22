@@ -1,5 +1,5 @@
 import { createClient } from 'redis';
-import Journal from '../services/journal';
+import Journal from '../../services/journal';
 
 const journal = new Journal(createClient);
 

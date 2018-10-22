@@ -9,15 +9,21 @@
     "@types/aws-lambda": "0.0.33",
     "@types/jest": "^22.2.3",
     "@types/node": "^9.6.7",
+    "bestzip": "^2.1.2",
     "copyfiles": "^1.2.0",
+    "git-rev-sync": "^1.12.0",
     "jest": "^22.4.3",
-    "typescript": "^2.8.3"
+    "rimraf": "^2.6.2",
+    "ts-loader": "^5.2.2",
+    "typescript": "^2.8.3",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "copy-package": "./node_modules/.bin/copyfiles package.json build",
-    "compile": "rm -rf build && ./node_modules/.bin/tsc",
-    "zip": "dist-scripts/pre-build.sh && dist-scripts/build.sh && dist-scripts/create-package.sh"
+    "test": "jest",
+    "copy-package": "copyfiles package.json build",
+    "compile": "rimraf build && tsc",
+    "package": "webpack && node zip.js"
   },
   "repository": {
     "type": "git",
